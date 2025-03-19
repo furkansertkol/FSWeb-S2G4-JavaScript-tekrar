@@ -99,28 +99,59 @@ let ucetambolunenler,
   tekraredensayilar;
 
 // 3a çözümü
+enbuyuk = sayilar[0];  
+enkucuk = sayilar[0];  
 
-/* kodlar buraya */
+for (let i = 1; i < sayilar.length; i++) {
+  if (sayilar[i] > enbuyuk) {
+    enbuyuk = sayilar[i];
+  }
+  if (sayilar[i] < enkucuk) {
+    enkucuk = sayilar[i];
+  }
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+ucetambolunenler = [];
+sayilar.forEach(sayi => {
+  if (sayi % 3 === 0) {
+    ucetambolunenler.push(sayi)
+  }
+});
+
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((acc,sayi) => acc+sayi,0)
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500)
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort((a,b) => a-b)
 
 // 3f çözümü
 
-/* kodlar buraya */
+tekraredensayilar = [];
+const tekrarSayaci = {};
+
+sayilar.forEach(sayi => {
+  if (tekrarSayaci[sayi]) {
+    tekrarSayaci[sayi] += 1;  
+  } else {
+    tekrarSayaci[sayi] = 1;  
+  }
+});
+
+for (const sayi in tekrarSayaci) {
+  if (tekrarSayaci[sayi] > 1) { 
+    const mesaj = `${sayi} sayısı ${tekrarSayaci[sayi]} kere tekrar edilmiştir`;
+    tekraredensayilar.push(mesaj);
+  }
+}
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
